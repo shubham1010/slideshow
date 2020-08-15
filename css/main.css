@@ -1,0 +1,38 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  margin: 10px;
+  padding: 10px;
+}
+
+.myslideshow {
+  border: 2px solid black;
+  display: flex;  
+  flex-direction: row;
+}
+
+img {
+   width: 200px;
+   height: 130px;
+}
+
+button {
+  font-size: 15px;
+  padding: 10px;
+  margin: 4px 2px;
+  font-weight: bold;
+}
+
+.slide {
+  border: 2px solid black;
+  text-align: center;
+  margin: 3px;
+  padding: 3px;
+  height: 250px;
+  width: 450px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hide {
+  display: none;
+}

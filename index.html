@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="./css/main.css">
+
+  <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"> </script> 
+  
+  <script type="text/javascript" src="./js/slideshow_controller.js"> </script>
+
+</head>
+  
+  <title>Sliding Images</title>
+
+<body>
+  
+  <div data-controller="slideshow">
+    Enter a number: <input data-target="slideshow.number" type="text" placeholder="Between 0 and 12"/> <br />
+    <button data-action="click->slideshow#numberOfSlides">Show</button>
+
+    <div data-target="slideshow.tags" class="myslideshow">
+
+    </div>
+
+    <button data-action="click->slideshow#stop">Stop</button>
+
+</body>
+
+</html>
