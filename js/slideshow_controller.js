@@ -20,7 +20,7 @@ class SlideShowController extends Stimulus.Controller {
       for(var i=0; i<data.length; i++) {
         name = data[i].name
         image = data[i].imgurl
-        this.tags.innerHTML += `<div class="hide" id=${i+1}> <h2>${name}</h2><a target="_blank" href=${image}>  <img src=${image} /></a></div>`
+        this.tags.innerHTML += `<div class="hide"><h2>${name}</h2><a target="_blank" href=${image}><img src=${image} /></a></div>`
       }
    
       // handling limit for slideshow panel
@@ -30,7 +30,7 @@ class SlideShowController extends Stimulus.Controller {
       }
 
       // activating entered number of slides
-      for (var i=0; i<Number(this.number); i++) {
+      for (var i=1; i<Number(this.number); i++) {
         this.tags.childNodes[i].classList.add("slide")
         this.tags.childNodes[i].classList.remove("hide")
       }
@@ -49,12 +49,13 @@ class SlideShowController extends Stimulus.Controller {
   slideshow() {
     
     // hide the beginning child 
-    this.tags.childNodes[0].classList.add("hide")
+
     this.tags.childNodes[0].classList.remove("slide")
+    setTimeout( ()=> {this.tags.childNodes[0].classList.add("hide")}, 1000)
 
     var temp = this.tags.childNodes[0]
     
-    // remove the beginning child
+    // remove the beginning child    
     this.tags.removeChild(this.tags.childNodes[0])
 
     // append it to the last

@@ -7,9 +7,9 @@ body {
 .myslideshow {
   border: 2px solid black;
   display: flex;  
+  object-fit: cover;
   flex-direction: row;
   overflow: hidden;
-  transform: translate3d(0, 0, 0);
 }
 
 img {
@@ -25,8 +25,7 @@ button {
 }
 
 .slide {
-/*  border: 2px solid black; */
-  position: relative;
+  border: 2px solid black; 
   text-align: center;
   margin: 3px;
   padding: 3px;
@@ -34,18 +33,20 @@ button {
   width: 450px;
   object-fit: cover;
   object-position: center;
-  transform: translate3d(0, 0, 0);
-  transition-delay: 0.8s;
+  transition: opacity 0.75s ease-in-out;
+/*  transition-delay: 0.8s;
   transition-timing-function: ease-in;
-  animation: slider 10s linear ;
+  animation: slider 10s linear ;*/
 }
 
 .hide {
-  display: none;
+  /*display: none;*/
+  opacity:0;
 }
 
+/*
 @keyframes slider {
   100% { 
     transform: translateX(-90.6666%);  
   }
-}
+}*/
