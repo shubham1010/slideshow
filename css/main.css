@@ -8,6 +8,8 @@ body {
   border: 2px solid black;
   display: flex;  
   flex-direction: row;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 img {
@@ -23,7 +25,8 @@ button {
 }
 
 .slide {
-  border: 2px solid black;
+/*  border: 2px solid black; */
+  position: relative;
   text-align: center;
   margin: 3px;
   padding: 3px;
@@ -31,8 +34,18 @@ button {
   width: 450px;
   object-fit: cover;
   object-position: center;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 0.8s;
+  transition-timing-function: ease-in;
+  animation: slider 10s linear ;
 }
 
 .hide {
   display: none;
+}
+
+@keyframes slider {
+  100% { 
+    transform: translateX(-90.6666%);  
+  }
 }
