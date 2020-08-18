@@ -18,6 +18,9 @@
   
   <div data-controller="slideshow">
     Enter a number: <input data-target="slideshow.number" type="text" placeholder="Between 0 and 12"/> <br />
+    Enter time to getting new slide: <input data-target="slideshow.inSlideTime" type="text" placeholder="in seconds"/> <br />
+    Enter time to remove beginning slide: <input data-target="slideshow.outSlideTime" type="text" placeholder="in seconds"/> 
+    <br />
     <button data-action="click->slideshow#numberOfSlides">Show</button>
 
     <div data-target="slideshow.tags" class="myslideshow">

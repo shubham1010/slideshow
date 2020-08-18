@@ -1,6 +1,6 @@
 class SlideShowController extends Stimulus.Controller {
 
-  static targets = ["number", "tags"] 
+  static targets = ["number", "tags", "inSlideTime", "outSlideTime"] 
 
   numberOfSlides() {
     this.tags.innerHTML = ""
@@ -29,6 +29,11 @@ class SlideShowController extends Stimulus.Controller {
         return
       }
 
+      if (this.inSlideTime == null || this.outSlideTime == null) {
+        alert("Missing value in 'in or out' textbox")
+        return
+      }
+
       // activating entered number of slides
       for (var i=1; i<Number(this.number); i++) {
         this.tags.childNodes[i].classList.add("slide")
@@ -51,7 +56,7 @@ class SlideShowController extends Stimulus.Controller {
     // hide the beginning child 
 
     this.tags.childNodes[0].classList.remove("slide")
-    setTimeout( ()=> {this.tags.childNodes[0].classList.add("hide")}, 1000)
+    setTimeout( ()=> {this.tags.childNodes[0].classList.add("hide")}, Number(this.outSlideTime)*1000)
 
     var temp = this.tags.childNodes[0]
     
@@ -66,7 +71,7 @@ class SlideShowController extends Stimulus.Controller {
     this.tags.childNodes[this.number-1].classList.remove("hide")
 
     // calling the slideshow function with delay of 2seconds
-    setTimeout( ()=>{ this.slideshow() }, 2000)
+    setTimeout( ()=>{ this.slideshow() }, Number(this.inSlideTime)*1000)
 
 
   }
@@ -79,6 +84,14 @@ class SlideShowController extends Stimulus.Controller {
   // getting the entered number
   get number() {
     return this.numberTarget.value
+  }
+
+  get inSlideTime() {
+    return this.inSlideTimeTarget.value
+  }
+
+  get outSlideTime() {
+    return this.outSlideTimeTarget.value
   }
 
 }
