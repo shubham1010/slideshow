@@ -7,7 +7,7 @@ class SlideShowController extends Stimulus.Controller {
     var data
 
     var ourRequest = new XMLHttpRequest()
-    ourRequest.open('GET', 'https://shubham1010.github.io/jsonfiles/ex01.json')
+    ourRequest.open('GET', 'https://shubhamjagdhane.github.io/jsonfiles/ex01.json')
 
     ourRequest.onload = ()=> {
       data = JSON.parse(ourRequest.responseText)
